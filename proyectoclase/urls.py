@@ -26,5 +26,8 @@ urlpatterns = [
     # path('hola/', hola),
     # path('fecha/', fecha),
     path('hola/', views.hola),
-    path('mi-template/', views.mi_template)
-]
+    path('mi-template/', views.mi_template),
+    path('mi-template/<str:nombre>', views.tu_template),
+    path('prueba-template/', views.prueba_template),
+    path('ver-personas/', views.ver_personas),
+]  
