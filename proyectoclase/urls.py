@@ -22,12 +22,13 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('fecha/', views.fecha),
-    path('fecha-nacimiento/<int:edad>', views.calcular_fecha_nacimiento),
+    path('fecha-nacimiento/<int:edad>/', views.calcular_fecha_nacimiento),
     # path('hola/', hola),
     # path('fecha/', fecha),
     path('hola/', views.hola),
     path('mi-template/', views.mi_template),
-    path('mi-template/<str:nombre>', views.tu_template),
+    path('mi-template/<str:nombre>/', views.tu_template),
     path('prueba-template/', views.prueba_template),
     path('ver-personas/', views.ver_personas),
+    path('crear-persona/<str:nombre>/<str:apellido>/', views.crear_persona)
 ]  

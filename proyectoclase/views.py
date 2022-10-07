@@ -2,7 +2,6 @@ from datetime import datetime
 import random
 from django.http import HttpResponse
 from django.template import Context, Template, loader
-
 from home.models import persona
 
 
@@ -42,12 +41,20 @@ def prueba_template(request):
     
     return HttpResponse(template_renderizado)
 
-def crear_persona(resquest):
-    return HttpResponse("")
+def crear_persona(resquest, nombre, apellido):
+    persona = persona(nombre=nombre, apellido=apellido, edad=random.randrange(1,99), fecha=datetime.now())
+        
+    persona.save()
+
+    template = loader.get_template("crear_persona.html")
+    template_renderizado = template.render({"persona": persona})
+
+    return HttpResponse(template_renderizado)
 
 def ver_personas(resquest):
     personas = persona.objects.all()
 
     template = loader.get_template("ver_personas.html")
     template_renderizado = template.render({"personas": personas})
+    
     return HttpResponse(template_renderizado)
