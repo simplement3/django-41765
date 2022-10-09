@@ -9,7 +9,7 @@
 <body>
     <p>Listado de personas:</p>
     {% for persona in personas %}
-    <li> {{persona.nombre}} {{persona.apellido}} {{persona.edad}} </li>
+    <li> {{persona.nombre}} {{persona.apellido}} - {{persona.edad}} años de edad - datos ingresados el {{persona.fecha_nacimiento}} </li>
     {% endfor %}
     
 </body>
