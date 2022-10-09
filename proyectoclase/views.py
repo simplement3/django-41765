@@ -42,12 +42,12 @@ def prueba_template(request):
     return HttpResponse(template_renderizado)
 
 def crear_persona(resquest, nombre, apellido):
-    persona = persona(nombre=nombre, apellido=apellido, edad=random.randrange(1,99), fecha=datetime.now())
+    persone =  persona(nombre=nombre, apellido=apellido, edad=random.randrange(1,99), fecha_nacimiento=datetime.now())
         
-    persona.save()
-
+    persone.save()
+ 
     template = loader.get_template("crear_persona.html")
-    template_renderizado = template.render({"persona": persona})
+    template_renderizado = template.render({"persona": persone})
 
     return HttpResponse(template_renderizado)
 
