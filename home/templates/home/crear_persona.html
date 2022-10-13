@@ -1,0 +1,15 @@
+{% extends 'padres/base.html' %}
+
+{% block title_pagina %}
+<title> Crear personas </title>
+{% endblock title_pagina %}
+
+
+{% block mi_contenido %}   
+<form action={% url 'crear_persona' %} method="POST">
+    <input type="text" placeholder="Nombre">
+    <input type="button" value="Crear">
+</form>       
+{% endblock mi_contenido %} 
+
+
